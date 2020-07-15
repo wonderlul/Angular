@@ -1,0 +1,25 @@
+<div
+  [ngClass]="{
+    'news-item-even': index % 2 == 0,
+    'news-item-odd': index % 2 !== 0
+  }"
+>
+  <h3>{{ news.title }}</h3>
+  <img
+    style="color:red;"
+    src="{{ news.imageUrl }}"
+    alt="Oh, oh! Looks like you got your imageURL wrong!"
+    height="100"
+    width="100"
+  />
+  <p>{{ news.content }}</p>
+
+  <label [class.green]="news.counter > 0" [class.red]="news.counter < 0"
+    >Rank: {{ news.counter }}</label
+  >
+  <button (click)="remove()">Remove</button>
+  <button (click)="up()">Move up</button>
+  <button (click)="down()">Move down</button>
+
+  <div class="clear"></div>
+</div>
